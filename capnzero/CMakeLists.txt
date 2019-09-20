@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(capnzero)
 
-## Use c++ 11x std
-add_definitions(-std=c++11)
+## Use c++-14 std
+add_definitions(-std=c++14)
 
 # Define where to find modules for ZeroMQ
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake CACHE INTERNAL "" FORCE)
