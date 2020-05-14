@@ -15,14 +15,6 @@ find_package(CapnProto REQUIRED)
 set(CapnProto_LIBRARIES ${CAPNP_LIBRARIES})
 set(CapnProto_INCLUDE_DIRS ${CAPNP_INCLUDE_DIRS})
 
-find_package(catkin REQUIRED)
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES capnzero capnzero-base-msgs
-  DEPENDS ZeroMQ CapnProto
-  CFG_EXTRAS CapnZero-extras.cmake
-)
-
 include_directories(
   include
   ${ZeroMQ_INCLUDE_DIRS}
@@ -40,8 +32,8 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC ZMQ_BUILD_DRAFT_API=1)
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-  ${ZeroMQ_LIBRARIES}
-  ${CAPNP_LIBRARIES}
+    ${ZeroMQ_LIBRARIES}
+    ${CAPNP_LIBRARIES}
 )
 
 ############# SENDER-CONSOLE-APP
