@@ -15,14 +15,6 @@ find_package(CapnProto REQUIRED)
 set(CapnProto_LIBRARIES ${CAPNP_LIBRARIES})
 set(CapnProto_INCLUDE_DIRS ${CAPNP_INCLUDE_DIRS})
 
-find_package(catkin REQUIRED)
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES capnzero capnzero-base-msgs
-  DEPENDS ZeroMQ CapnProto
-  CFG_EXTRAS CapnZero-extras.cmake
-)
-
 include_directories(
   include
   ${ZeroMQ_INCLUDE_DIRS}
